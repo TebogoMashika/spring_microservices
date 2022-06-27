@@ -1,0 +1,34 @@
+server:
+  port: 9191
+
+# cloud routes configuration
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+        - id: USER-SERVICE
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/users/**
+        - id: DEPARMENT-SERVICE
+          uri: lb://DEPARMENT-SERVICE
+          predicates:
+            - Path=/departments/**
+
+        - id: CLAIM-DESHBOARD-SERVICE
+          uri: lb://CLAIM-DESHBOARD-SERVICE
+          predicates:
+            - Path=/api/v1/**
+
+#Eureka client configuration
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+

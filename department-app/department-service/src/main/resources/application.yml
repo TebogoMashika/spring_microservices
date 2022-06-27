@@ -1,0 +1,17 @@
+server:
+  port: 9001
+
+#application name
+spring:
+  application:
+    name: DEPARTMENT-SERVICE
+
+#Eureka client configuration
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost

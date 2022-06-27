@@ -1,0 +1,20 @@
+Create two microservices 
+- if you want one microservice to call another using a rest call you can use RestTemplate
+- define your ports in the application.yml file 
+
+Create a registry 
+- manages and maintains all the microservices 
+- all the microservices will be connected to this registry 
+	- port infor
+	- url 
+	- microservice name 
+
+- add dependecies , dependencyManagement infor , build infor
+- add the loadbalancer 
+
+Create a API Gateway
+- all the request will come to this Api gateway 
+- configure the routes 
+- impliment a circuit breaker
+
+
